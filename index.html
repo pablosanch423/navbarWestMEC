@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WestMEC Nav</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f4;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  .header {
+    background-color: #f48024; /* Adjusted to a more modern orange shade */
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .header .logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav-links li {
+    display: inline;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  .nav-links a:hover {
+    color: #ddd; 
+  }
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      display: none;
+      position: absolute;
+      top: 55px;
+      left: 0;
+      background-color: #f48024;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .nav-links li {
+      padding: 15px 0;
+      width: 100%;
+      text-align: center;
+    }
+    .menu-icon {
+      display: block;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="#" class="logo">
+    <img src="./assets/PD_logo.png" width="150" style="margin-top: 0.6rem;">
+  </a>
+  <div class="menu-icon" onclick="toggleMenu()">
+    ☰
+  </div>
+  <nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Search for Class</a></li>
+      <li><a href="#">Hotel</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+function toggleMenu() {
+  var x = document.getElementById("navLinks");
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";
+  }
+}
+</script>
+
+</body>
+</html>
